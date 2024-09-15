@@ -7,6 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import backgroundCalltocation from '../../public/img/calltoaction.jpg'
+import ActionAreaCard from '@/components/BlogCard/Cards';
 
 import { Box, Typography } from '@mui/material';
 
@@ -103,41 +104,68 @@ export default function Home() {
       </Box>
 
 
-{/* SECTION - texto */}
-<Box 
-  sx={{ 
-    position: 'relative',  // Ensure the overlay stays within this box
-    backgroundImage: `url(${backgroundCalltocation.src})`, 
-    backgroundPosition: 'center', 
-    backgroundRepeat: 'no-repeat', 
-    backgroundSize: 'cover',
-    '::before': {
-      content: '""',  // Pseudo-element for the overlay
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      height: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',  // Semi-transparent black
-      zIndex: 1,
-    }
-  }}
->
-  <Typography
-    variant="h4"
-    sx={{ 
-      position: 'relative',  // Ensure text stays on top of the overlay
-      fontWeight: 'bold', 
-      mb: 2, 
-      textAlign: 'center', 
-      padding: '5rem', 
-      color: 'white', 
-      zIndex: 2,  // Keep the text above the dark overlay
-    }}  
-  >
-    Refresca tu vida, despierta tu potencial
-  </Typography>
-</Box>
+      {/* SECTION - texto */}
+      <Box
+        sx={{
+          position: 'relative',  // Ensure the overlay stays within this box
+          backgroundImage: `url(${backgroundCalltocation.src})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          '::before': {
+            content: '""',  // Pseudo-element for the overlay
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',  // Semi-transparent black
+            zIndex: 1,
+          }
+        }}
+      >
+        <Typography
+          variant="h4"
+          sx={{
+            position: 'relative',  // Ensure text stays on top of the overlay
+            fontWeight: 'bold',
+            mb: 2,
+            textAlign: 'center',
+            padding: '5rem',
+            color: 'white',
+            zIndex: 2,  // Keep the text above the dark overlay
+          }}
+        >
+          Refresca tu vida, despierta tu potencial
+        </Typography>
+      </Box>
+
+
+      <Box sx={{ padding: '2rem' }}>
+
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: 'bold', mb: 2, textTransform: 'uppercase' }}  // zIndex to keep text on top
+        >
+          blogs recientes
+        </Typography>
+
+        <Box style={{ display: 'flex', margin: '2rem', alignItems: 'center', justifyContent: 'center', flexDirection: { xs: 'column', md: 'row' } }}>
+
+          {/* <Box style={{ width: ['100%', '100%', '30%'] }}>
+          hello wolrd
+          </Box>
+
+          <Box style={{ width: ['100%', '100%', '30%'] }}>
+          hello worlds
+            {/* <ActionAreaCard image={`${backgroundCalltocation.src}`} title='Come saludable y a tiempo' description='Enim aliqua aliqua in nulla id laborum aliqua elit pariatur aliqua exercitation quis deserunt. Amet in ad veniam aute. Minim enim laboris irure voluptate proident pariatur eiusmod velit ex in sit labore. Est laborum excepteur e.' /> */}
+
+        </Box>
+
+
+      </Box>
+
+
     </body>
   );
 }

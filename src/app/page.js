@@ -8,7 +8,7 @@ import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import backgroundCalltocation from '../../public/img/calltoaction.jpg'
 import ActionAreaCard from '@/components/BlogCard/Cards';
-import { useMediaQuery, useTheme } from '@mui/material';
+import BasicCard from '@/components/ServiceCard/ServiceCard';
 
 
 import { Box, Typography } from '@mui/material';
@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
 
-    <body style={{backgroundColor: '#f4f4f4'}}>
+    <body style={{ backgroundColor: '#f4f4f4' }}>
 
       {/* SECTIN - toolbar */}
       <DrawerAppBar />
@@ -143,7 +143,43 @@ export default function Home() {
       </Box>
 
 
-      <Box sx={{ padding: '2rem'}}>
+
+      {/* SECTION - servicios */}
+      <Box sx={{ padding: '2rem', textAlign: 'center' }}>
+
+
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: 'bold', mb: 2, textTransform: 'uppercase', marginBottom:'2rem'}}  // zIndex to keep text on top
+        >
+          servicios
+        </Typography>
+
+        <Box sx={{ display: 'flex', flexDirection: ['column', 'row', 'row'], alignItems: 'center', gap:'4rem', margin:'1rem'}} >
+          <Box sx={{ width: ['100%', '100%', '50%'] }}>
+            <BasicCard />
+          </Box>
+          <Box sx={{ width: ['100%', '100%', '50%'] }}>
+            <BasicCard />
+          </Box>
+        </Box>
+
+
+        <Box sx={{ display: 'flex', flexDirection: ['column', 'row', 'row'], alignItems: 'center', gap:'4rem', margin:'1rem' }} >
+          <Box sx={{ width: ['100%', '100%', '50%'] }}>
+            <BasicCard />
+          </Box>
+          <Box sx={{ width: ['100%', '100%', '50%'] }}>
+            <BasicCard />
+          </Box>
+        </Box>
+
+
+      </Box>
+
+
+      {/* SECTION - recent blogs */}
+      <Box sx={{ padding: '2rem' }}>
 
         <Typography
           variant="h5"
@@ -153,30 +189,29 @@ export default function Home() {
         </Typography>
 
         <Box
-      sx={{
-        gap: '2rem',
-        display: 'flex',
-        margin: '2rem',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: { xs: 'column', sm: 'row' }, // column on mobile, row on tablet/desktop
-      }}
-    >
-      <Box sx={{ width: { xs: '100%', sm: '33%' } }}>
-        <ActionAreaCard image={`${backgroundCalltocation.src}`} title='Come saludable y a tiempo' description='Enim aliqua aliqua in nulla id laborum aliqua elit pariatur aliqua exercitation quis deserunt. Amet in ad veniam aute. Minim enim laboris irure voluptate proident pariatur eiusmod velit ex in sit labore. Est laborum excepteur e.' />
+          sx={{
+            gap: '2rem',
+            display: 'flex',
+            margin: '2rem',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: { xs: 'column', sm: 'row' }, // column on mobile, row on tablet/desktop
+          }}
+        >
+          <Box sx={{ width: { xs: '100%', sm: '33%' } }}>
+            <ActionAreaCard image={`${backgroundCalltocation.src}`} title='Come saludable y a tiempo' description='Enim aliqua aliqua in nulla id laborum aliqua elit pariatur aliqua exercitation quis deserunt. Amet in ad veniam aute. Minim enim laboris irure voluptate proident pariatur eiusmod velit ex in sit labore. Est laborum excepteur e.' />
+          </Box>
+
+          <Box sx={{ width: { xs: '100%', sm: '33%' } }}>
+            <ActionAreaCard image={`${backgroundCalltocation.src}`} title='Come saludable y a tiempo' description='Enim aliqua aliqua in nulla id laborum aliqua elit pariatur aliqua exercitation quis deserunt. Amet in ad veniam aute. Minim enim laboris irure voluptate proident pariatur eiusmod velit ex in sit labore. Est laborum excepteur e.' />
+          </Box>
+
+          <Box sx={{ width: { xs: '100%', sm: '33%' } }}>
+            <ActionAreaCard image={`${backgroundCalltocation.src}`} title='Come saludable y a tiempo' description='Enim aliqua aliqua in nulla id laborum aliqua elit pariatur aliqua exercitation quis deserunt. Amet in ad veniam aute. Minim enim laboris irure voluptate proident pariatur eiusmod velit ex in sit labore. Est laborum excepteur e.' />
+          </Box>
+        </Box>
       </Box>
 
-      <Box sx={{ width: { xs: '100%', sm: '33%' } }}>
-      <ActionAreaCard image={`${backgroundCalltocation.src}`} title='Come saludable y a tiempo' description='Enim aliqua aliqua in nulla id laborum aliqua elit pariatur aliqua exercitation quis deserunt. Amet in ad veniam aute. Minim enim laboris irure voluptate proident pariatur eiusmod velit ex in sit labore. Est laborum excepteur e.' />
-      </Box>
-
-      <Box sx={{ width: { xs: '100%', sm: '33%' } }}>
-      <ActionAreaCard image={`${backgroundCalltocation.src}`} title='Come saludable y a tiempo' description='Enim aliqua aliqua in nulla id laborum aliqua elit pariatur aliqua exercitation quis deserunt. Amet in ad veniam aute. Minim enim laboris irure voluptate proident pariatur eiusmod velit ex in sit labore. Est laborum excepteur e.' />
-      </Box>
-    </Box>
-
-
-      </Box>
 
 
     </body>

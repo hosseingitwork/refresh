@@ -9,6 +9,11 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import backgroundCalltocation from '../../public/img/calltoaction.jpg'
 import ActionAreaCard from '@/components/BlogCard/Cards';
 import BasicCard from '@/components/ServiceCard/ServiceCard';
+import ContactCard from '@/components/ContactUsCard/ContactUsCard';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
+import PhoneEnabledIcon from '@mui/icons-material/PhoneEnabled';
+import EmailIcon from '@mui/icons-material/Email';
+import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 
 
 import { Box, Typography } from '@mui/material';
@@ -16,6 +21,16 @@ import { Box, Typography } from '@mui/material';
 export default function Home() {
 
   const sobre_nosotros_items = [{ name: 'Perdida de Peso', icon: <FitnessCenterIcon /> }, { name: 'Piel Refrescante', icon: <MedicalInformationIcon /> }, { name: 'Una Mejor Vida', icon: <FavoriteIcon /> }]
+  const contactos = [
+    {
+      title: 'Dirección', info: 'Avenida. loremd jbafjdg aikhjfba niouahfnm 23', icon: <FmdGoodIcon  color="success" sx={{ fontSize:50 }}/>
+    },
+    {
+      title: 'Llámanos', info: '(+52) 55 d3439823', icon: <PhoneEnabledIcon  color="success" sx={{ fontSize:50 }}/>
+    },
+    { title: 'Correo electrónico', info: 'soporte@gmail.com', icon: <EmailIcon color="success" sx={{ fontSize:50 }}/> },
+    { title: 'Horarios', info: ' Lunes a Domingo, 8am - 3pm', icon: <QueryBuilderIcon  color="success" sx={{ fontSize:50 }}/> }
+  ]
 
   return (
 
@@ -60,10 +75,6 @@ export default function Home() {
           Renuevate por dentro y por fuera
         </Typography>
       </Box>
-
-
-
-
 
       {/* SECTION - Who we are */}
       <Box sx={{ textAlign: 'center', backgroundColor: '#f4f4f4' }}>
@@ -143,19 +154,18 @@ export default function Home() {
       </Box>
 
 
-
       {/* SECTION - servicios */}
       <Box sx={{ padding: '2rem', textAlign: 'center' }}>
 
 
         <Typography
           variant="h5"
-          sx={{ fontWeight: 'bold', mb: 2, textTransform: 'uppercase', marginBottom:'2rem'}}  // zIndex to keep text on top
+          sx={{ fontWeight: 'bold', mb: 2, textTransform: 'uppercase', marginBottom: '2rem' }}  // zIndex to keep text on top
         >
           servicios
         </Typography>
 
-        <Box sx={{ display: 'flex', flexDirection: ['column', 'row', 'row'], alignItems: 'center', gap:'4rem', margin:'1rem'}} >
+        <Box sx={{ display: 'flex', flexDirection: ['column', 'row', 'row'], alignItems: 'center', gap: '4rem', margin: '1rem' }} >
           <Box sx={{ width: ['100%', '100%', '50%'] }}>
             <BasicCard />
           </Box>
@@ -165,7 +175,7 @@ export default function Home() {
         </Box>
 
 
-        <Box sx={{ display: 'flex', flexDirection: ['column', 'row', 'row'], alignItems: 'center', gap:'4rem', margin:'1rem' }} >
+        <Box sx={{ display: 'flex', flexDirection: ['column', 'row', 'row'], alignItems: 'center', gap: '4rem', margin: '1rem' }} >
           <Box sx={{ width: ['100%', '100%', '50%'] }}>
             <BasicCard />
           </Box>
@@ -213,6 +223,38 @@ export default function Home() {
       </Box>
 
 
+      {/* SECTION - contacts */}
+      <Box sx={{ padding: '2rem', textAlign: 'center', backgroundColor: 'white', paddingTop: '5rem' }}>
+        <Typography
+          variant="h5"
+          sx={{ fontWeight: 'bold', mb: 2, textTransform: 'uppercase', marginBottom: '2rem' }}  // zIndex to keep text on top
+        >
+          contactos
+        </Typography>
+
+        <Box sx={{ display: 'flex', gap:2, flexDirection: ['column', 'row', 'row'], alignItems: 'center', margin: '1rem' }} >
+          {contactos.slice(0,2).map(
+            (element) => {
+              return(
+              <Box sx={{ width: ['100%', '100%', '50%'] }}>
+                <ContactCard title={element.title} icon={element.icon} info={element.info} />
+              </Box>)
+            }
+          )}
+        </Box>
+
+        <Box sx={{ display: 'flex',gap:2, flexDirection: ['column', 'row', 'row'], alignItems: 'center', margin: '1rem' }} >
+          {contactos.slice(2,4).map(
+            (element) => {
+              return(
+              <Box sx={{ width: ['100%', '100%', '50%'] }}>
+                <ContactCard title={element.title} icon={element.icon} info={element.info} />
+              </Box>)
+            }
+          )}
+        </Box>
+
+      </Box>
 
     </body>
   );
